@@ -1,107 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-around;
-            padding: 10px;
-        }
-
-        header nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        header a {
-            text-decoration: none;
-            color: #000;
-            font-size: 16px;
-        }
-
-        /* Main image container */
-        main img {
-            padding-top: 20px;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        /* Container for the image in main */
-        .image-container {
-            width: 100%;
-            height: 400px; /* Or any desired height */
-            overflow: hidden; /* To ensure image doesn't overflow */
-            max-height: 60vh;
-        }
-        #invite {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically centers content */
-    align-items: center; /* Horizontally centers content */
-    text-align: center; /* Centers text inside the elements */
-    padding: 20px;
-    
-}
-#invite h5{
-    font-weight: 300;
-font-size: large;
-color: #353935;
-}
-
-#invite h2{
-    font-weight: 500;
-    
-}
-
-        #button button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50; /* Green background */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #button button:hover {
-            background-color: #80b983; /* Darker green on hover */
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-sizing: border-box;
         }
     </style>
 </head>
-<body>
-    <header>
-        <!-- Logo Section -->
-        <div>
-            <img src="Zerodha_logo.svg.png" alt="logo" style="width: 150px;">
-        </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
 
-    <main>
-        <div class="image-container">
-            <img src="landing.png" alt="landing Info">
+<body>
+
+    <div style="border-bottom: 1px solid rgba(205, 203, 203, 0.418);">
+        <div
+            style="display: flex; justify-content: space-between; margin: 20px 50px 20px 50px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; align-items: center;">
+            <div>
+                <img src="images/Zerodha_logo.svg.png" alt="" width="180px">
+            </div>
+            <div style="display: flex; gap: 20px;">
+                <div>SignUp</div>
+                <div>About</div>
+                <div>Products</div>
+                <div>Pricing</div>
+                <div>Support</div>
+            </div>
         </div>
-        <div id="invite">
-            <h2>Invest in everything</h2>
-            <h5>Online platform to invest in stocks, derivatives, mutual funds, ETFs, bonds, and more.</h5>
-        
-        <div id="button"><button>Sign up for free</button></div>
     </div>
-    </main>
+    <div style="margin: 100px 30px 50px 30px ; display: flex; justify-content: center;">
+        <img src="images/landing.png" alt="" style="min-width: 500px; max-width: 800px;">
+    </div>
+    <div style="display: flex; justify-content: center; padding: 13px;">
+        <h1
+            style="font-size: 50px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 500;">
+            Invest in everything</h1>
+    </div>
+    <div style="display: flex; justify-content: center; padding: 13px;">
+        <p style="font-size: 23px; font-family: Arial, Helvetica, sans-serif; font-weight: 200; text-align: center;">
+            Online platform to invest in stocks, derivatives, mutual funds, and more</p>
+    </div>
+    <div style="display: flex; justify-content: center; margin: 20px ;">
+        <button
+            style="padding: 8px 20px 8px 20px; background-color: #387ed1; color: white; font-size: 20px; border: none; border-radius: 3.5px;">Sign
+            up now</button>
+    </div>
+
+
+    <!-- broker page -->
+    <div>
+        <div style="width: 65vw;    margin:auto;  margin-top:5px; display: flex; margin-top: 80px; ">
+            <div style="width: 50%; display: flex; justify-content: center; ">
+                <img src="images/largest-broker.svg" alt="" width="70%">
+            </div>
+            <div style="width: 50%;  padding: 2px 50px 2px 50px">
+                <h1 style="font-size: 40px; font-weight: 500; padding-bottom: 30px;">Largest stock broker in India</h1>
+                <p style="padding-bottom: 30px; font-size: 18px; font-weight: 200; line-height: 25px; margin-top: 30px;">1.5+ Crore Zerodha clients contribute to over 15% of all retail order volumes in India daily by
+                    trading and investing in:</p>
+                <div style="display: flex; gap: 30px; margin-top: 30px;">
+                    <div>
+                        <ul style="list-style-position: inside; line-height: 30px;">
+                            <li>Futures and Options</li>
+                            <li>Commodity derivatives</li>
+                            <li>Currency derivatives</li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <ul style="list-style-position: inside; line-height: 30px;">
+                            <li>Stocks & IPOs</li>
+                            <li>Direct mututal funds</li>
+                            <li>Bonds and Govt. Securities</li>
+                        </ul>
+                    </div>
+                     
+                </div>
+                <div style="margin-top: 30px;">
+                    <img src="images/press-logos.png" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div style="width: 65vw;    margin:auto;  ; display: flex; margin-top: 100px;">
+            <div style="width: 50%;">
+                <div style="width: 75%; display: flex; flex-direction: column; gap: 30px;">
+                    <h1>Trust with Confidence</h1>
+                    <h3>Customer-first always</h3>
+                    <p>That's why 1.5+ crore customers trust Zerodha with ₹4.5+ lakh crores worth of equity investments.
+                    <h3>No spam or gimmicks</h3>
+                    <p>No gimmicks, spam, "gamification", or annoying push notifications. High quality apps that you use at your pace, the way you like.</p>
+                    </p>
+                    <h3>The Zerodha universe</h3>
+                    <p>Not just an app, but a whole ecosystem. Our investments in 30+ fintech startups offer you tailored services specific to your needs.</p>
+                    <h3>Do better with money</h3>
+                    <p>With initiatives like Nudge and Kill Switch, we don't just facilitate transactions, but actively help you do better with your money.</p>
+                </div>
+            </div>
+            <div style="width: 60%;">
+                <img src="images/ecosystem.png" alt="" width="100%">
+            </div>
+        </div>
+         
+    </div>
+
+
 </body>
+
 </html>
