@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+        }
+
+        /* Main image container */
+        main img {
+            padding-top: 20px;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Container for the image in main */
+        .image-container {
+            width: 100%;
+            height: 400px; /* Or any desired height */
+            overflow: hidden; /* To ensure image doesn't overflow */
+            max-height: 60vh;
+        }
+        #invite {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers content */
+    align-items: center; /* Horizontally centers content */
+    text-align: center; /* Centers text inside the elements */
+    padding: 20px;
+    
+}
+#invite h5{
+    font-weight: 300;
+font-size: large;
+color: #353935;
+}
+
+#invite h2{
+    font-weight: 500;
+    
+}
+
+        #button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #button button:hover {
+            background-color: #80b983; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Logo Section -->
+        <div>
+            <img src="Zerodha_logo.svg.png" alt="logo" style="width: 150px;">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="image-container">
+            <img src="landing.png" alt="landing Info">
+        </div>
+        <div id="invite">
+            <h2>Invest in everything</h2>
+            <h5>Online platform to invest in stocks, derivatives, mutual funds, ETFs, bonds, and more.</h5>
+        
+        <div id="button"><button>Sign up for free</button></div>
+    </div>
+    </main>
+</body>
+</html>

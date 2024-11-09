@@ -1,0 +1,202 @@
+HTML attributes provide additional information about HTML elements. They appear inside the opening tag and usually consist of a name-value pair. Here’s an overview of commonly used HTML attributes and their purposes:
+
+---
+
+### 1. **Global Attributes**
+   These attributes can be used on any HTML element.
+
+   - `id`: Assigns a unique identifier to an element.
+     ```html
+     <div id="header"></div>
+     ```
+   
+   - `class`: Specifies one or more class names for CSS styling.
+     ```html
+     <p class="intro text-bold"></p>
+     ```
+
+   - `style`: Inline CSS for styling the element directly.
+     ```html
+     <h1 style="color: blue;">Hello World</h1>
+     ```
+
+   - `title`: Adds a tooltip text displayed when the user hovers over the element.
+     ```html
+     <button title="Click to submit">Submit</button>
+     ```
+
+   - `data-*`: Custom data attributes, often used for storing extra information.
+     ```html
+     <div data-user-id="12345">User Info</div>
+     ```
+
+   - `hidden`: Hides the element from view.
+     ```html
+     <p hidden>This is hidden text.</p>
+     ```
+
+   - `tabindex`: Controls the tab order of an element for keyboard navigation.
+     ```html
+     <button tabindex="1">First</button>
+     ```
+
+   - `lang`: Specifies the language of the element's content.
+     ```html
+     <p lang="en">Hello!</p>
+     ```
+
+### 2. **Event Attributes**
+   These attributes define event handlers, which trigger JavaScript functions on specific events.
+
+   - `onclick`: Triggered when an element is clicked.
+   - `onmouseover`: Triggered when a pointer is moved onto an element.
+   - `onchange`: Triggered when an input's value changes.
+   - `onsubmit`: Triggered when a form is submitted.
+
+   ```html
+   <button onclick="alert('Button clicked!')">Click me</button>
+   ```
+
+### 3. **Form Attributes**
+   Used with `<form>` and form elements to control form behavior and structure.
+
+   - `action`: Specifies the URL to send form data to when submitted.
+     ```html
+     <form action="/submit"></form>
+     ```
+
+   - `method`: Defines the HTTP method to use (`GET` or `POST`).
+     ```html
+     <form method="post"></form>
+     ```
+
+   - `name`: Specifies the name of the form or input.
+     ```html
+     <input type="text" name="username">
+     ```
+
+   - `placeholder`: Provides a hint to the user of what to enter in the input.
+     ```html
+     <input type="text" placeholder="Enter your name">
+     ```
+
+   - `value`: Defines the initial value of the input element.
+     ```html
+     <input type="text" value="John Doe">
+     ```
+
+   - `required`: Marks the input as required, preventing form submission if empty.
+     ```html
+     <input type="text" required>
+     ```
+
+   - `maxlength`: Limits the number of characters in an input field.
+     ```html
+     <input type="text" maxlength="10">
+     ```
+
+   - `disabled`: Disables an element, making it unclickable or uneditable.
+     ```html
+     <button disabled>Submit</button>
+     ```
+
+   - `autocomplete`: Allows the browser to suggest previous entries.
+     ```html
+     <input type="text" autocomplete="on">
+     ```
+
+### 4. **Media Attributes**
+   Used with `<img>`, `<audio>`, `<video>`, and similar media elements.
+
+   - `src`: Specifies the source file for media.
+     ```html
+     <img src="image.jpg">
+     ```
+
+   - `alt`: Alternative text for images (for accessibility).
+     ```html
+     <img src="image.jpg" alt="A beautiful scenery">
+     ```
+
+   - `width` and `height`: Define the width and height of media in pixels or percentages.
+     ```html
+     <img src="image.jpg" width="200" height="100">
+     ```
+
+   - `controls`: Adds controls like play, pause, and volume for `<audio>` and `<video>`.
+     ```html
+     <video controls src="video.mp4"></video>
+     ```
+
+   - `autoplay`: Starts playing media automatically (may be muted initially).
+     ```html
+     <audio autoplay src="song.mp3"></audio>
+     ```
+
+   - `loop`: Plays media repeatedly.
+     ```html
+     <video loop src="video.mp4"></video>
+     ```
+
+   - `muted`: Mutes audio or video by default.
+     ```html
+     <video muted src="video.mp4"></video>
+     ```
+
+### 5. **Anchor Attributes**
+   Used with `<a>` tags to define links and navigation.
+
+   - `href`: Specifies the URL the link goes to.
+     ```html
+     <a href="https://example.com">Visit Example</a>
+     ```
+
+   - `target`: Opens the link in a specific way, like a new tab (`_blank`).
+     ```html
+     <a href="https://example.com" target="_blank">Open in New Tab</a>
+     ```
+
+   - `download`: Prompts a download when the link is clicked.
+     ```html
+     <a href="file.zip" download>Download File</a>
+     ```
+
+### 6. **Table Attributes**
+   Used to define table structure and styling.
+
+   - `colspan`: Spans a cell across multiple columns.
+     ```html
+     <td colspan="2">Combined Cell</td>
+     ```
+
+   - `rowspan`: Spans a cell across multiple rows.
+     ```html
+     <td rowspan="3">Three Rows Combined</td>
+     ```
+
+   - `border`: Specifies the border width (though generally replaced by CSS).
+     ```html
+     <table border="1"></table>
+     ```
+
+### 7. **ARIA (Accessible Rich Internet Applications) Attributes**
+   Help make web content more accessible for people with disabilities.
+
+   - `aria-label`: Labels an element for accessibility.
+     ```html
+     <button aria-label="Close">X</button>
+     ```
+
+   - `aria-hidden`: Hides an element from assistive technologies.
+     ```html
+     <span aria-hidden="true">*</span>
+     ```
+
+   - `role`: Defines the role of an element (e.g., `button`, `navigation`, `alert`).
+     ```html
+     <div role="navigation"></div>
+     ```
+
+---
+
+These attributes are essential for structuring and enhancing HTML content, adding functionality, and improving accessibility and usability.
