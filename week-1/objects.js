@@ -18,7 +18,7 @@
 
 // 2. **Using `new Object()` syntax**
 //    ```javascript
-   const person = new Object();
+   const person1 = new Object();
    person.name = "Alice";
    person.age = 30;
    person.greet = function() {
@@ -113,13 +113,13 @@ function Person(name, age) {
    const person = { name: "Alice" };
    console.log(person.hasOwnProperty("name")); // Outputs: true
    console.log(person.hasOwnProperty("age")); // Outputs: false
-   ```
+//    ```
 
 // ### Custom Object Methods
 
 // In addition to these built-in methods, you can create your own methods within an object:
 
-```javascript
+// javascript
 const person = {
     name: "Alice",
     age: 30,
