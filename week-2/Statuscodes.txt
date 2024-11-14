@@ -1,0 +1,66 @@
+HTTP status codes are three-digit numbers returned by a web server to indicate the result of an HTTP request. They help the client (browser or application) understand the outcome of their request. Here is a breakdown of the different categories of status codes and some common examples:
+
+### 1. **1xx - Informational Responses**
+These codes indicate that the request has been received and the server is continuing the process.
+
+- **100 Continue**: The server has received the request headers, and the client should continue sending the request body.
+- **101 Switching Protocols**: The server is switching protocols, as requested by the client.
+
+### 2. **2xx - Successful Responses**
+These codes indicate that the request was successfully received, understood, and accepted.
+
+- **200 OK**: The request was successful, and the server returned the requested data.
+- **201 Created**: The request was successful, and a new resource was created as a result (e.g., after a `POST` request).
+- **202 Accepted**: The request has been accepted for processing, but the processing is not complete.
+- **204 No Content**: The request was successful, but there is no content to send in the response body (commonly used with `DELETE` requests).
+  
+### 3. **3xx - Redirection Responses**
+These codes indicate that the client must take additional action to complete the request, typically through redirection.
+
+- **301 Moved Permanently**: The requested resource has been permanently moved to a new URL.
+- **302 Found**: The requested resource has been temporarily moved to a different URL.
+- **303 See Other**: The client should use a `GET` request to fetch the resource at another URL.
+- **304 Not Modified**: The resource has not been modified since the last request (commonly used with caching).
+
+### 4. **4xx - Client Errors**
+These codes indicate that there was an error in the request sent by the client.
+
+- **400 Bad Request**: The server cannot process the request due to invalid syntax (e.g., missing parameters or malformed request).
+- **401 Unauthorized**: The client must authenticate themselves to get the requested response.
+- **403 Forbidden**: The client does not have permission to access the resource, even if authentication is provided.
+- **404 Not Found**: The server cannot find the requested resource (e.g., URL does not exist).
+- **405 Method Not Allowed**: The request method (e.g., `GET`, `POST`, `PUT`) is not allowed for the requested resource.
+- **408 Request Timeout**: The server timed out waiting for the request.
+- **409 Conflict**: The request could not be completed due to a conflict with the current state of the resource.
+- **413 Payload Too Large**: The request entity is too large for the server to process.
+- **415 Unsupported Media Type**: The server does not support the media type of the request.
+
+### 5. **5xx - Server Errors**
+These codes indicate that the server failed to fulfill a valid request.
+
+- **500 Internal Server Error**: A generic error occurred on the server side.
+- **501 Not Implemented**: The server does not support the functionality required to fulfill the request.
+- **502 Bad Gateway**: The server, while acting as a gateway or proxy, received an invalid response from the upstream server.
+- **503 Service Unavailable**: The server is temporarily unable to handle the request (often due to being overloaded or down for maintenance).
+- **504 Gateway Timeout**: The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server.
+
+### Summary of Common Status Codes:
+
+| Code | Meaning                          | Usage |
+|------|----------------------------------|-------|
+| 200  | OK                               | Success |
+| 201  | Created                          | Successful creation |
+| 204  | No Content                       | Successful request, no content |
+| 400  | Bad Request                      | Client error (bad syntax) |
+| 401  | Unauthorized                     | Client needs authentication |
+| 403  | Forbidden                        | Client doesn't have permission |
+| 404  | Not Found                        | Resource not found |
+| 405  | Method Not Allowed               | Invalid HTTP method used |
+| 500  | Internal Server Error            | Generic server error |
+| 502  | Bad Gateway                      | Invalid response from upstream server |
+
+### How to Use Status Codes:
+- **2xx** codes are for successful operations (e.g., fetching data, creating data).
+- **4xx** codes are used when there's an issue with the client request (e.g., bad data or missing parameters).
+- **5xx** codes indicate problems with the server (e.g., internal errors, timeouts).
+
