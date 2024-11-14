@@ -5,6 +5,9 @@ const { User, Course } = require("../db");
 const { default: mongoose } = require("mongoose");
 
 // User Routes
+// http://localhost:3000/user/signup
+// with body username and password|
+// "harkirat@gmail.com""123"
 router.post('/signup', (req, res) => {
     // Implement user signup logic
     const username = req.body.username;
@@ -18,6 +21,8 @@ router.post('/signup', (req, res) => {
     })
 });
 
+
+// http://localhost:3000/user/courses
 router.get('/courses', async (req, res) => {
     // Implement listing all courses logic
      // Implement fetching all courses logic
@@ -28,6 +33,13 @@ router.get('/courses', async (req, res) => {
      })
 });
 
+
+
+// http://localhost:3000/user/courses/67360c2e987d8c206529774d
+// {
+//     "username":"harkirat@gmail.com",
+//    "password": "123"
+// }
 router.post('/courses/:courseId', userMiddleware, async(req, res) => {
     // Implement course purchase logic
     const courseId = req.params.courseId;

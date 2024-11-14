@@ -7,7 +7,7 @@ mongodb+srv://zameer:pHYM95hMFBu6rudP@cluster0.kwt2q.mongodb.net/
 postgresql://neondb_owner:SnHCF8RMryY1@ep-dark-night-a5zrgiue.us-east-2.aws.neon.tech/neondb?sslmode=require
 
 
-
+mongodb+srv://zameer:pHYM95hMFBu6rudP@cluster0.kwt2q.mongodb.net/mydatabase
 
 
 npm install mongoose
