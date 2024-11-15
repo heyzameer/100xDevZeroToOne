@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator with Server</title>
+</head>
+<body>
+
+    <input oninput="calculateSum()" type="text" id="num1" placeholder="First number"><br><br>
+    <input oninput="calculateSum()" type="text" id="num2" placeholder="Second number"><br><br>
+   
+    <p id="result"></p>
+
+    <script>
+        async function calculateSum() {
+            const num1 = document.getElementById("num1").value;
+            const num2 = document.getElementById("num2").value;
+
+            // Check if both inputs are valid numbers
+            if (!isNaN(num1) && !isNaN(num2) && num1 !== "" && num2 !== "") {
+                const a = parseFloat(num1);
+                const b = parseFloat(num2);
+                try {
+                    // Make the fetch request to the server
+                    fetch(`http://localhost:5000/sum?a=${a}&b=${b}`)
+                        .then((response) => response.text())
+                        .then(function(ans) {
+                            // Print the sum in the result paragraph
+                            document.getElementById('result').innerText = "Sum: " + ans;
+                        })
+                        .catch(function(error) {
+                            document.getElementById("result").textContent = "Error: Unable to calculate sum.";
+                        });
+                } catch (error) {
+                    document.getElementById("result").textContent = "Error: Unable to calculate sum.";
+                }
+            } else {
+                document.getElementById("result").textContent = "Please enter valid numbers.";
+            }
+        }
+
+    </script>
+</body>
+</html>

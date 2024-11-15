@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Calculator with Server</title>
+</head>
+<body>
+
+    <h1>Interest Calculator</h1>
+    
+    <!-- Input fields for Principal, Rate, and Time -->
+    <input type="text" id="principal" placeholder="Principal (P)"><br><br>
+    <input type="text" id="rate" placeholder="Rate of Interest (R)"><br><br>
+    <input type="text" id="time" placeholder="Time in Years (T)"><br><br>
+    
+    <button id="calculateBtn">Calculate Interest</button><br><br>
+    
+    <!-- Display results -->
+    <p id="interestResult"></p>
+    <p id="totalResult"></p>
+
+    <script>
+        async function calculateInterest() {
+            const principal = document.getElementById("principal").value;
+            const rate = document.getElementById("rate").value;
+            const time = document.getElementById("time").value;
+
+            // Check if all inputs are valid numbers
+            if (!isNaN(principal) && !isNaN(rate) && !isNaN(time) && principal !== "" && rate !== "" && time !== "") {
+                const p = parseFloat(principal);
+                const r = parseFloat(rate);
+                const t = parseFloat(time);
+
+                try {
+                    // Send GET request to the server to calculate interest and total
+                    const response = await fetch(`http://localhost:5000/interest?p=${p}&r=${r}&t=${t}`);
+                    
+                    if (response.ok) {
+                        const data = await response.json();  // Get the interest and total from the server
+                        document.getElementById('interestResult').innerText = "Interest: " + data.interest;
+                        document.getElementById('totalResult').innerText = "Total Amount: " + data.total;
+                    } else {
+                        document.getElementById('interestResult').innerText = "Error: Unable to calculate interest.";
+                        document.getElementById('totalResult').innerText = "";
+                    }
+                } catch (error) {
+                    document.getElementById('interestResult').innerText = "Error: Unable to reach server.";
+                    document.getElementById('totalResult').innerText = "";
+                }
+            } else {
+                document.getElementById('interestResult').innerText = "Please enter valid numbers.";
+                document.getElementById('totalResult').innerText = "";
+            }
+        }
+
+        // Add event listener to the button
+        document.getElementById("calculateBtn").addEventListener("click", calculateInterest);
+    </script>
+</body>
+</html>
