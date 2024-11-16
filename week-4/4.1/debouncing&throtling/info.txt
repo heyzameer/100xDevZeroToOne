@@ -1,0 +1,36 @@
+Debouncing is a technique used in programming to limit the rate at which a function is executed, especially when a user is interacting with an input field or triggering an event frequently (e.g., typing in a search box, resizing a window, or scrolling).
+
+The idea behind debouncing is to delay the execution of a function until a certain amount of time has passed since the last event. If the event occurs again within that delay period, the previous function call is canceled and the timer is reset. This ensures that the function is only executed once after the user has stopped triggering the event.
+
+Common Use Cases for Debouncing:
+Search Input: Limiting API calls when typing into a search field.
+Window Resizing: Preventing excessive function calls on window resize events.
+Scroll Events: Limiting operations when the user is scrolling.
+
+
+
+
+
+
+
+
+
+
+
+
+Throttling is a technique similar to debouncing, but with a key difference: while debouncing delays the execution of a function until after a specified delay, throttling ensures that the function is executed at regular intervals (e.g., once every 1000ms) regardless of how many times an event occurs within that period. This helps prevent excessive calls to a function, especially when it is triggered by frequent events like scrolling or keypresses.
+
+
+
+ let lastExecutionTime = 0;
+        const throttleDelay = 1000; // 1 second throttle delay
+
+        function throttleCalculateSum() {
+            const now = new Date().getTime();
+
+            // Only call the function if the specified delay has passed
+            if (now - lastExecutionTime >= throttleDelay) {
+                lastExecutionTime = now; // Update the last execution time
+                calculateSum();
+            }
+        }
