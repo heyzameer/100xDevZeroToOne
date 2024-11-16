@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input onchange="debounceCalculateSum()" type="text" id = "num1" placeholder="First number"><br><br>
+    <input onchange="debounceCalculateSum()" type="text" id = "num2" placeholder="second number"><br><br>
+    <!-- <button onclick="calculateSum()">Sum</button><br> -->
+    <p id = "result"></p>
+
+    <script>
+        let timeout;
+        function debounceCalculateSum(){
+            clearTimeout(timeout);
+            timeout = setTimeout(calculateSum,100);
+        }
+        function calculateSum(){
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+           // console.log(num1,num2)
+            if(!isNaN(num1) && !isNaN(num2)){
+                // const sum = num1 +num2;
+
+                try{
+                    fetch(`http://localhost:4000/sum?a=${num1}&b=${num2}`)
+                    .then((response)=>{
+                        return response.text();
+                    })
+                    .then((ans)=>{
+                        const result = document.getElementById("result");
+                        result.textContent = `Sum : ${ans}`;
+                    })
+                    .catch(function(error){
+                        const result = document.getElementById("result").textContent="Unable to calcualte sum";
+                    })
+                }
+                catch(error){
+                    console.error(error.message)
+                }
+                const result = document.getElementById("result");
+                
+            }else{
+                const result = document.getElementById("result");
+                result.textContent = `Please enter valid number`;
+            }
+            }
+    </script>
+
+</body>
+</html>
