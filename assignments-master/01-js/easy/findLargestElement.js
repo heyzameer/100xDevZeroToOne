@@ -5,8 +5,17 @@
   - Output: 9
 */
 
+const { array } = require("zod");
+
 function findLargestElement(numbers) {
-    
+    let largest = numbers[0];
+    for (let index = 0; index < numbers.length; index++) {
+    if(numbers[index]> largest){
+        largest=numbers[index];
+    }        
+    }
+    return largest;
 }
 
 module.exports = findLargestElement;
+// npm x jest ./tests/findLargestElement.test.js
